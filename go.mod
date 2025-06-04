@@ -1,4 +1,4 @@
-module gotd-session-storage
+module gotd-helper
 
 go 1.24.3
 

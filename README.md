@@ -1,7 +1,7 @@
-# gotd-session-storage
+# gotd-helper
 
 ## Overview
-`gotd-session` is a lightweight Go library designed to facilitate session management for the gotd Telegram client. It offers flexible session storage solutions, including SQLite and in-memory options, and supports importing and converting session data from popular Telegram clients like Telethon and Pyrogram.
+`gotd-helper` is a lightweight Go library designed to facilitate session management for the gotd Telegram client. It offers flexible session storage solutions, including SQLite and in-memory options, and supports importing and converting session data from popular Telegram clients like Telethon and Pyrogram.
 
 ## Features
 - Session storage implementations for gotd client.
@@ -13,7 +13,7 @@
 ## Installation
 
 ```bash
-go get github.com/pageton/gotd-session-storage
+go get github.com/pageton/gotd-helper
 ```
 
 ## Usage
@@ -22,8 +22,8 @@ go get github.com/pageton/gotd-session-storage
 import (
     "context"
     "log"
-    "github.com/pageton/gotd-session-storage/storage"
-    "github.com/pageton/gotd-session-storage/session"
+    "github.com/pageton/gotd-helper/storage"
+    "github.com/pageton/gotd-helper/session"
 )
 
 func main() {
