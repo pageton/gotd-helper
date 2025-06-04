@@ -6,9 +6,8 @@ import (
 	"sync"
 
 	"github.com/go-faster/errors"
-	_ "github.com/mattn/go-sqlite3"
-
 	"github.com/gotd/td/session"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 type SQLiteSessionStorage struct {
@@ -69,6 +68,16 @@ func (s *SQLiteSessionStorage) StoreSession(_ context.Context, data []byte) erro
 	`, data)
 	if err != nil {
 		return errors.Wrap(err, "exec insert/update")
+	}
+	return nil
+}
+
+func (s *SQLiteSessionStorage) Close() error {
+	s.mux.Lock()
+	defer s.mux.Unlock()
+
+	if err := s.DB.Close(); err != nil {
+		return errors.Wrap(err, "close database")
 	}
 	return nil
 }
