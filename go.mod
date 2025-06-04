@@ -1,4 +1,4 @@
-module gotd-helper
+module github.com/pageton/gotd-helper
 
 go 1.24.3
 
